@@ -1,8 +1,9 @@
 <?php
+    // include('h.php');
     //1. เชื่อมต่อ database:
     include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
     //2. query ข้อมูลจากตาราง tb_admin:
-    $query = "SELECT * FROM user JOIN userpetition ON user.id_user = userpetition.id_user JOIN petition ON petition.id_petition = userpetition.id_petition WHERE user.id_user = $user_id;" or die("Error:" . mysqli_error());
+    $query = "SELECT * FROM petition WHERE id_user='$user_id'" or die("Error:" . mysqli_error());
     //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
     $result = mysqli_query($con, $query);
     //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:

@@ -27,7 +27,7 @@
           <td ><?php echo $row_am['name']; echo " "; echo $row_am['lastname']; ?></td>
           <td><a href="index.php?act=rwd&ID=<?php echo $row_am['id_user']; ?>" class="btn btn-info btn-sm"> password </a> </td>
           <td><a href="index.php?act=edit&ID=<?php echo $row_am['id_user']; ?>" class="btn btn-warning btn-sm"> แก้ไข </a> </td>
-          <td><a href="admin_del_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-danger btn-sm'  onclick="return confirm('ยันยันการลบ')">ลบ</a> </td>
+          <td><a href="admin_del_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-danger btn-sm'  onclick="return confirm('ยันยันการลบ')">ปิดบัญชี</a> </td>
         </tr>
       <?php } while ($row_am =  mysqli_fetch_assoc($result)); ?>
       </table>
