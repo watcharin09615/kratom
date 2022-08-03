@@ -1,29 +1,30 @@
 <?php
-  include('h.php');
-
+    // include('h.php');
     //1. เชื่อมต่อ database:
     include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
     //2. query ข้อมูลจากตาราง tb_admin:
-    $query = "SELECT * FROM user WHERE user_type=2 ORDER BY id_user ASC" or die("Error:" . mysqli_error());
+    $query = "SELECT * FROM planting WHERE id_user='$user_id'" or die("Error:" . mysqli_error());
     //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
     $result = mysqli_query($con, $query);
     //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
     $row_am = mysqli_fetch_assoc($result);
 ?>
+
 <table border="2" class="display table table-bordered" id="example1" align="center"  >
-<a href="admin.php?act=add" class="bth-info">เพิ่ม</a>
+        <a href="index.php?act=add_planting" class="bth-info">เพิ่ม</a>
         <thead>
           <tr class="info">    
-            <th>Username</th>
-            <th>name</th>
-            <th width="5%">delete</th>
+            <th>สายพันธุ์</th>
+            <th>วันที่ปลูก</th>
+            <th>หมายเหตุ</th>
           </tr>
         </thead>
       <?php do { ?>
-        <tr>
-          <td><?php echo $row_am['username']; ?></td>
-          <td ><?php echo $row_am['name']; echo " "; echo $row_am['lastname']; ?></td>
-          <td><a href="admin_del_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-danger btn-sm'  onclick="return confirm('ยันยันการลบ')">ปิดบัญชี</a> </td>
-        </tr>
+        <tr> 
+          <td><?php echo $row_am['species']; ?></td>
+          <td><?php echo $row_am['planting_date']; ?></td>
+          <td><?php echo $row_am['note']; ?></td>
+          <td><a href="index.php?act=planting" class='btn btn-danger btn-sm'>เก็บ</a> </td>
+          </tr>
       <?php } while ($row_am =  mysqli_fetch_assoc($result)); ?>
       </table>

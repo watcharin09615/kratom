@@ -16,10 +16,22 @@ session_start();
         $_SESSION["user_id"] = $row["id_user"];
         $_SESSION["a_name"] = $row["name"];
         $_SESSION["type"] = $row["user_type"];
-
         if($_SESSION["user_id"]!=''){
           if($_SESSION["type"]=='1'){
-            Header("Location: user/");
+            $check = "SELECT id_user FROM infouser WHERE id_user = '".$_SESSION["user_id"]."'";
+            $result1 = mysqli_query($con, $check) or die(mysqli_error());
+            $num=mysqli_num_rows($result1);
+            if($num <= 0)
+            {
+              echo "<script>";
+              echo "alert('ยินดีต้อนรับ กรุณากรอกข้อมูลก่อนใช้งานระบบ');";
+              echo "window.location.href ='user/infouser.php';";
+              echo "</script>";
+              // Header("Location: user/infouser.php");
+            }else{
+
+              Header("Location: user/");
+            }  
           }elseif($_SESSION["type"]=='2'){
             Header("Location: admin/");
           }

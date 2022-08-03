@@ -9,8 +9,7 @@
         
     </div>
     <div class="col-sm-8" align="left">
-        <input  name="qty" type="number" required class="form-control" id="qty" placeholder="จำนวน (ต้น)" />
-        ต้น    
+        <input  name="qty" type="number" required class="form-control" id="qty" placeholder="จำนวน (ต้น)" /> 
     </div>
     </div>
     

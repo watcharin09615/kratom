@@ -31,10 +31,11 @@ $(document).ready(function() {
         include('user_petition_list.php');
       }elseif($act == 'add_petition'){
         include('user_petition_form_add.php');
+      }elseif($act == 'planting'){
+        include('planting_list.php');
+      }elseif($act == 'add_planting'){
+        include('planting_add.php');
       }else{
-        ?>
-        <!-- <a href="" class="bth-info">เพิ่ม</a> -->
-        <?php
         include('gap.php');
       }
       ?>
