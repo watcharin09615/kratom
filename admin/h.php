@@ -7,7 +7,8 @@ error_reporting( error_reporting() & ~E_NOTICE );
 
     if($user_id==''){
     Header("Location: ../logout.php");  
-  }  
+    }
+      
 ?>
  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

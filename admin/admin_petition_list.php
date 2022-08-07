@@ -23,7 +23,18 @@
           <td><?php echo $row_am['name']; echo " "; echo $row_am['lastname']; ?></td>
           <td><?php echo $row_am['petition_date']; ?></td>
           <td><?php echo $row_am['species']; ?></td>
-          <td ><?php echo $row_am['status']; ?></td>
+          <?php if($row_am['status'] == 1){ ?>
+            <td bgcolor="FFFF89"> รอการตรวจสอบ </td>
+
+
+          <?php }elseif($row_am['status'] == 2){ ?>
+            <td bgcolor="88FFEF"> กำลังตรวจสอบ </td>
+
+          <?php }elseif($row_am['status'] == 3){?>
+            <td bgcolor="A4FB00"> เสร็จสิ้น </td>
+            
+          <?php } ?>
+
           <td><a href="user.php?act=detail&ID=<?php echo $row_am['id_petition']; ?>" class="btn btn-info btn-sm"> รายละเอียด</a> </td>
           </tr>
       <?php } while ($row_am =  mysqli_fetch_assoc($result)); ?>

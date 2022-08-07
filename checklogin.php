@@ -16,8 +16,11 @@ session_start();
         $_SESSION["user_id"] = $row["id_user"];
         $_SESSION["a_name"] = $row["name"];
         $_SESSION["type"] = $row["user_type"];
+        $_SESSION["status"] = $row["user_status"];
         if($_SESSION["user_id"]!=''){
           if($_SESSION["type"]=='1'){
+
+
             $check = "SELECT id_user FROM infouser WHERE id_user = '".$_SESSION["user_id"]."'";
             $result1 = mysqli_query($con, $check) or die(mysqli_error());
             $num=mysqli_num_rows($result1);

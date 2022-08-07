@@ -30,7 +30,7 @@
 
           <?php }elseif($row_am['user_status'] == 0){ ?>
             <td> ถูกปิดงานใช้งาน </td>
-            <td><a href="user_enable_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-danger btn-sm'  onclick="return confirm('ยืนยันเปิดการใช้งาน')">เปิดการใช้งาน</a> </td>
+            <td><a href="user_enable_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-success'  onclick="return confirm('ยืนยันเปิดการใช้งาน')">เปิดการใช้งาน</a> </td>
 
           <?php }?>
 
