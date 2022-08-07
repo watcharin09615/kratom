@@ -21,7 +21,7 @@ include('condb.php');
     if($a_pass1 != $a_pass2){
       echo "<script type='text/javascript'>";
       echo "alert('password ไม่ตรงกัน กรุณาใส่่ใหม่อีกครั้ง ');";
-      echo "window.location = 'register.php'; ";
+      echo "window.history.back();";
       echo "</script>";
     }else{
     $sql = "INSERT INTO `user`(`username`, `password`, `name`,`lastname`, `user_type`) VALUES ('$a_user','$a_pass1','$a_name','$a_lastname','1')";

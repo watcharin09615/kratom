@@ -15,6 +15,7 @@
           <tr class="info">    
             <th>Username</th>
             <th>name</th>
+            <th>สถานะการใช้งาน</th>
             <th width="5%">delete</th>
           </tr>
         </thead>
@@ -22,7 +23,18 @@
         <tr>
           <td><?php echo $row_am['username']; ?></td>
           <td ><?php echo $row_am['name']; echo " "; echo $row_am['lastname']; ?></td>
-          <td><a href="admin_del_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-danger btn-sm'  onclick="return confirm('ยันยันการลบ')">ปิดการใช้งาน</a> </td>
+
+          <?php if($row_am['user_status'] == 1){ ?>
+            <td> กำลังใช้งาน </td>
+            <td><a href="user_del_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-danger btn-sm'  onclick="return confirm('ยันยันการปิดการใช้งาน')">ปิดการใช้งาน</a> </td>
+
+          <?php }elseif($row_am['user_status'] == 0){ ?>
+            <td> ถูกปิดงานใช้งาน </td>
+            <td><a href="user_enable_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-danger btn-sm'  onclick="return confirm('ยืนยันเปิดการใช้งาน')">เปิดการใช้งาน</a> </td>
+
+          <?php }?>
+
+          
         </tr>
       <?php } while ($row_am =  mysqli_fetch_assoc($result)); ?>
       </table>

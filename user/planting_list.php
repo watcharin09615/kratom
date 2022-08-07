@@ -24,7 +24,7 @@
           <td><?php echo $row_am['species']; ?></td>
           <td><?php echo $row_am['planting_date']; ?></td>
           <td><?php echo $row_am['note']; ?></td>
-          <td><a href="index.php?act=" class='btn btn-danger btn-sm'>เก็บ</a> </td>
+          <td><a href="index.php?act=" class='btn btn-success'>เก็บ</a> </td>
           </tr>
       <?php } while ($row_am =  mysqli_fetch_assoc($result)); ?>
       </table>

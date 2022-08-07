@@ -13,7 +13,7 @@ width:100%;
     <div class="col-md-4" style="background-color:#D6EAF8">
       <h3 align="center">
       <span class="glyphicon glyphicon-lock"> </span>
-      Form Login </h3>
+      KRATOM </h3>
       <form  name="formlogin" action="checklogin.php" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-12">

@@ -50,7 +50,7 @@
     <div class="form-group">
     <div class="col-sm-3"> </div>
     <div class="col-sm-5" align="right">
-        <button type="submit" class="btn btn-success" id="btn"> <span class="glyphicon glyphicon-saved"></span> เพิ่ม  </button>      
+        <button type="submit" class="btn btn-success" id="btn"> <span class="glyphicon glyphicon-saved"></span> ยืนยัน  </button>      
     </div> 
     </div>
     </form>

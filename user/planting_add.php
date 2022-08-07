@@ -1,6 +1,6 @@
 
-<a href="user.php?act=planting" class="bth-info">back</a>
-<form action="add_db.php" method="POST" class="form-horizontal">
+<a href="index.php?act=planting" class="bth-info">back</a>
+<form action="planting_add_db.php" method="POST" class="form-horizontal">
     
     <div class="form-group">
     <div class="col-sm-3" align="right"> กระท่อมสายพันธ์ุ </div>
@@ -31,7 +31,7 @@
     <div class="form-group">
     <div class="col-sm-3"> </div>
     <div class="col-sm-5" align="right">
-        <button type="submit" class="btn btn-success" id="btn"> <span class="glyphicon glyphicon-saved"></span> เพิ่ม  </button>      
+        <button type="submit" class="btn btn-success" id="btn"> <span class="glyphicon glyphicon-saved"></span>บันทึก</button>      
     </div> 
     </div>
     </form>
