@@ -7,7 +7,7 @@
     //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
     $result = mysqli_query($con, $query);
     //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
-    $row_am = mysqli_fetch_assoc($result);
+    // $row_am = mysqli_fetch_assoc($result);
 ?>
 
 <table border="2" class="display table table-bordered" id="example1" align="center"  >
@@ -21,7 +21,16 @@
             <th>สถานะ</th>
           </tr>
         </thead>
-      <?php do { ?>
+      <?php
+      if ($result->num_rows == 0) {
+      ?>
+        <tr align="center">
+          <td colspan="4">ไม่พบข้อมูล</td>
+        </tr>
+      <?php
+      } else {
+        while ($row_am =  mysqli_fetch_assoc($result)){
+      ?>
         <tr> 
           <td><?php echo $row_am['species']; ?></td>
           <td><?php echo $row_am['quantity']; ?></td>
@@ -29,5 +38,6 @@
           <td><?php echo $row_am['succes_date']; ?></td>
           <td ><?php echo $row_am['status']; ?></td>
           </tr>
-      <?php } while ($row_am =  mysqli_fetch_assoc($result)); ?>
+      <?php }
+      }?>
       </table>

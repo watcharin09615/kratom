@@ -8,7 +8,7 @@ include('condb.php');
   $a_lastname = $_POST["lastname"];
 
   $check = "SELECT username FROM user WHERE username = '$a_user'";
-  $result1 = mysqli_query($con, $check) or die(mysqli_error());
+  $result1 = mysqli_query($con, $check) or die(mysqli_error($con));
   $num=mysqli_num_rows($result1);
 
   if($num > 0)
@@ -24,8 +24,8 @@ include('condb.php');
       echo "window.history.back();";
       echo "</script>";
     }else{
-    $sql = "INSERT INTO `user`(`username`, `password`, `name`,`lastname`, `user_type`) VALUES ('$a_user','$a_pass1','$a_name','$a_lastname','1')";
-    $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
+    $sql = "INSERT INTO `user`(`username`, `password`, `name`,`lastname`, `user_type`) VALUES ('$a_user','".md5($a_pass1)."','$a_name','$a_lastname','1')";
+    $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
     mysqli_close($con);
     }
     if($result){

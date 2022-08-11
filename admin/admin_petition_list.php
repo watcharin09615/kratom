@@ -28,7 +28,7 @@
 
 
           <?php }elseif($row_am['status'] == 2){ ?>
-            <td bgcolor="88FFEF"> กำลังตรวจสอบ </td>
+            <td bgcolor="88FFEF"> กำลังดำเนินการ </td>
 
           <?php }elseif($row_am['status'] == 3){?>
             <td bgcolor="A4FB00"> เสร็จสิ้น </td>
