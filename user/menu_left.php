@@ -1,4 +1,5 @@
-<div class="list-group">
+
+<div class="menu-items">
 	<a class="list-group-item list-group-item-action">สวัสดี คุณ <?php echo $a_name; ?></a>
 	<a href="index.php?act=" class="list-group-item list-group-item-action">หน้าแรก</a>
 	<a href="index.php?act=planting" class="list-group-item list-group-item-action">บันทึกการปลูก</a>

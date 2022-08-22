@@ -7,7 +7,7 @@ session_start();
     $a_user= $_POST['username'];
     $a_pass = $_POST['password'];
 
-    $sql="SELECT * FROM `user` WHERE username='".$a_user."' AND password='". md5($a_pass) ."' ";
+    $sql="SELECT * FROM `user` WHERE username='".$a_user."' AND password='". md5($a_pass)."' ";
     $result = mysqli_query($con,$sql);
 
     if(mysqli_num_rows($result)==1){

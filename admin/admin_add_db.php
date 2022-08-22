@@ -24,7 +24,7 @@ include('../condb.php');
         echo "window.location = 'admin.php'; ";
         echo "</script>";
       }else{
-      $sql = "INSERT INTO `user`(`username`, `password`, `name`, `lastname`, `user_type`) VALUES ('$a_user','$a_pass1','$a_name','$a_lastname','2')";
+      $sql = "INSERT INTO `user`(`username`, `password`, `name`, `lastname`, `user_type`) VALUES ('$a_user','".md5($a_pass1)."','$a_name','$a_lastname','2')";
       $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
       mysqli_close($con);
       }

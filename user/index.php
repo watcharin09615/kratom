@@ -4,6 +4,14 @@
   <?php 
     include('h.php');
   ?>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
 <script>    
 $(document).ready(function() {
@@ -19,11 +27,15 @@ $(document).ready(function() {
   <div class="container">
   <?php include('../navbar.php');?>
   <div class="row">
-    <div class="col-md-3">
-        <?php include('menu_left.php');?>
-        <!-- Content Wrapper. Contains page content -->
+    <nav class="navber">
+      <div class="navber-container container">
+         <?php include('menu_left.php');?>
+          <!-- Content Wrapper. Contains page content -->
 
-    </div> 
+      </div>
+      
+    </nav>
+     
     <div class="col-md-9">
       <?php 
       $act = $_GET['act'];

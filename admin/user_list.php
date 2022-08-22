@@ -8,7 +8,7 @@
     //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
     $result = mysqli_query($con, $query);
     //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
-    $row_am = mysqli_fetch_assoc($result);
+    // $row_am = mysqli_fetch_assoc($result);
 ?>
 <table border="2" class="display table table-bordered" id="example1" align="center"  >
         <thead>
@@ -19,7 +19,16 @@
             <th width="5%">delete</th>
           </tr>
         </thead>
-      <?php do { ?>
+      <?php
+      if($result->num_rows == 0){
+        ?>
+        <tr align="center">
+          <td colspan="4">ไม่พบข้อมูล</td>
+        </tr>
+      <?php
+
+      } else {
+      while ($row_am =  mysqli_fetch_assoc($result)){ ?>
         <tr>
           <td><?php echo $row_am['username']; ?></td>
           <td ><?php echo $row_am['name']; echo " "; echo $row_am['lastname']; ?></td>
@@ -33,8 +42,6 @@
             <td><a href="user_enable_db.php?ID=<?php echo $row_am['id_user']; ?>" class='btn btn-success'  onclick="return confirm('ยืนยันเปิดการใช้งาน')">เปิดการใช้งาน</a> </td>
 
           <?php }?>
-
-          
         </tr>
-      <?php } while ($row_am =  mysqli_fetch_assoc($result)); ?>
+      <?php } } ?>
       </table>
