@@ -13,7 +13,7 @@ $email = $_POST['email'];
 
 $sql ="INSERT INTO infouser (id_user,national_id,house_id,address,sub_area,area,province,postcode,tel,email) 
     VALUES ('$user_id','$national','$house','$address','$subarea','$area','$province','$postcode','$tel','$email');";
-    $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
+    $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
     mysqli_close($con);
     
     if($result){

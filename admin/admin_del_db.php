@@ -8,7 +8,7 @@ $a_id = $_REQUEST["ID"];
 //ลบข้อมูลออกจาก database ตาม member_id ที่ส่งมา
 
 $sql = "UPDATE user SET user_status = '0' WHERE id_user ='$a_id' ";
-$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
+$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
 
 //จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
   

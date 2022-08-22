@@ -16,6 +16,7 @@
     <div class="col-sm-10" align="left">
         <input  name="national" type="text" required class="form-control" id="national" placeholder="เลขบัตรประชาชน" />
         
+        
     </div>
     <div class="col-sm-3" align="right"> รหัสทะเบียนบ้าน </div>
     <div class="col-sm-8" align="left">

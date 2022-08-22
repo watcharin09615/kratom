@@ -11,7 +11,7 @@ $note = $_POST['note'];
 $sql ="INSERT INTO planting (id_user,species,qty,planting_date,note) 
     VALUES ('$user_id','$species','$qty','$date','$note');";
     
-    $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
+    $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
     mysqli_close($con);
     
     if($result){
